@@ -29,3 +29,5 @@ Technology:
 * Chai (Assertions Library)
 * Sinon (Stub and Mock)
 * AWS
+
+See the Docs folder for Trello Board and Mockup
