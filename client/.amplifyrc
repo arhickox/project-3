@@ -10,5 +10,6 @@
             "StackName": "client-20190121004555",
             "StackId": "arn:aws:cloudformation:us-east-1:421805193807:stack/client-20190121004555/d2989170-1d3f-11e9-a8ca-12a9adafee72"
         }
-    }
+    },
+    "publish-ignore": []
 }
