@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tabletop Assistant - Sign Up</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+</head>
+
+<body>
+
+    <img src="assets/images/tabletop_assistant_title.png" id="main_header">
+
+
+  <div id="signupDiv">
+    <form>
+        <div class="form-group">
+          <label for="signupEmail" style="color: white">Email Address</label>
+          <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="signupPassword" style="color: white">Password</label>
+          <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="signupPasswordConfirmed" style="color: white">Confirm Password</label>
+            <input type="password" class="form-control" id="signupPasswordConfirmed" placeholder="Password">
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="playerRadio" value="Player" checked>
+            <label class="form-check-label" for="playerRadio" style="color: white">
+              Create Player Account
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="GMRadio" value="GM">
+            <label class="form-check-label" for="GMRadio" style="color: white">
+              Create GM Account
+            </label>
+          </div><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+
+</body>
+
+</html>
