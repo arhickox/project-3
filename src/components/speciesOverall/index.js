@@ -1,13 +1,11 @@
-import React, { Component } from "react";
-import speciesInfo from "../speciesInfo";
+import React  from "react";
+import speciesInfo from "../SpeciesInfo";
 
-class speciesOverall extends Component {
-render() {
+function SpeciesOverall() {
     return (
       <div>
           <speciesInfo />
       </div>
     )
 };
-}
-export default speciesOverall;
+export default SpeciesOverall;

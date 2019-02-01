@@ -1,17 +1,15 @@
-import React, { Component } from "react";
-import speciesOverall from "../components/speciesOverall";
+import React from "react";
+import SpeciesOverall from "../components/SpeciesOverall";
 
-function Create () {
+function Create() {
 
-        return (
+    return (
 
-            <div>
-                <speciesOverall />
+        <div>
+            <SpeciesOverall />
+        </div>
 
-            </div>
-
-        );
-    };
-
+    );
+};
 
 export default Create;

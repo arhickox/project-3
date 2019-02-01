@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function speciesInfo(props) {
+function SpeciesInfo(props) {
     return (
         <div className="card">
             <div className="card-header">
@@ -30,4 +30,4 @@ function speciesInfo(props) {
     )
 }
 
-export default speciesInfo;
+export default SpeciesInfo;
