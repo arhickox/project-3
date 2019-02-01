@@ -4,10 +4,10 @@ import "./style.css";
 
 function mainButtons() {
     return (
-<div class="parent">
+<div className="parent">
 <img src="https://project-3-20190122205700-deployment.s3.amazonaws.com/tabletop_assistant_title.png" id="main_header" />
 
-<div class="row">
+<div className="row">
 <div id="leftMain">
     <Link to="/create" className={window.location.pathname === "/create"}><img src="https://project-3-20190122205700-deployment.s3.amazonaws.com/create_button_dark.jpg" onmouseover="this.src='https://project-3-20190122205700-deployment.s3.amazonaws.com/create_button_light.jpg'"
         onmouseout="this.src='https://project-3-20190122205700-deployment.s3.amazonaws.com/create_button_dark.jpg'" /></Link>
