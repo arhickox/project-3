@@ -1,11 +1,11 @@
-import React  from "react";
-import speciesInfo from "../SpeciesInfo";
+import React, {Component}  from "react";
+import SpeciesInfo from "../SpeciesInfo";
 
-function SpeciesOverall() {
-    return (
-      <div>
-          <speciesInfo />
+class SpeciesOverall extends Component {
+    render () {
+      return <div>
+          <SpeciesInfo />
       </div>
-    )
+    }
 };
 export default SpeciesOverall;

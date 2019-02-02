@@ -9,7 +9,7 @@ function SpeciesInfo(props) {
   </div>
             <div className="card-body">
                 <h5 className="card-title">Species Selection</h5>
-                <div className="col-sm-6" className="species_stats">
+                <div className={["col-sm-6", "species_stats"]}>
                     <div className="card">
                         <div className="card-body">
                             Brawn: {props.brawn}
