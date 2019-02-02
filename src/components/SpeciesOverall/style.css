@@ -1,0 +1,11 @@
+.speciesStats{
+    text-align: center;
+}
+
+.additionalStats{
+    display: inline;
+}
+
+.card {
+    margin: 20px;
+}
