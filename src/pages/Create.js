@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./style.css";
 import SpeciesOverall from "../components/SpeciesOverall";
 
 class Create extends Component {
@@ -163,6 +162,55 @@ class Create extends Component {
 
         const btnCareerType = event.target.attributes.getNamedItem("data-value").value;
 
+        if (btnCareerType === "gunslinger") {
+            this.setState({ career: "Smuggler" }); 
+            this.setState({ specialization: "Gunslinger" }); 
+            this.setState({ tagline: "The Quick Draw" }); 
+            this.setState({ career_description: "The Gunslinger knows better than most that making a living in the Outer Rim Territories is a constant struggle. He needs to be fast on the draw to stay alive. The Gunslinger and his beloved sidearm are inseparable, but he often carries a holdout weapon when stuck in a hostile, target-rich environment. To face off with a Gun­slinger is a dangerous and foolish proposition." }); 
+            this.setState({ career_skills: "Coordination, Deception, Knowledge (Underworld), Perception, Piloting (Space), Skulduggery, Streetwise, Vigilance, Coercion, Cool, Knowl­edge (Outer Rim) and Ranged (Light)" }); 
+        } else if (btnCareerType === "pilot") {
+            this.setState({ career: "Smuggler" }); 
+            this.setState({ specialization: "Pilot" }); 
+            this.setState({ tagline: "A Galaxy of Destinations" }); 
+            this.setState({ career_description: "Plenty of folks know how to fly a starship, but a Smuggler who specializes as a Pilot develops a relationship with his ship, and it becomes an extension of his wit and his will. He can make a plodding old transport run far above its performance ratings, and given time and some modifications, he can turn it into one of the fleetest and most maneuverable craft ever to take to the stars." }); 
+            this.setState({ career_skills: "Coordination, Deception, Knowledge (Underworld), Perception, Piloting (Space), Skulduggery, Streetwise, Vigilance, Astrogation, Gunnery, Piloting (Planetary), and Piloting (Space)" }); 
+        } else if (btnCareerType === "assassin") {
+            this.setState({ career: "Bounty Hunter" }); 
+            this.setState({ specialization: "Assassin" }); 
+            this.setState({ tagline: "Instrument of Policy" }); 
+            this.setState({ career_description: "Whereas most Bounty Hunters focus primarily on the capture of quarry, those who specialize as Assassins are generally tasked with the straightforward proposition of terminating their targets. Assassins tend to prefer getting in quietly, taking out targets (either up close or sniping from afar), and leaving just as silently as they entered. Their talents are very appropriate for this kind of work." }); 
+            this.setState({ career_skills: "Athletics, Brawl, Perception, Piloting (Planetary), Piloting (Space), Ranged (Heavy), Streetwise, Vigilance, Melee, Ranged (Heavy), Skulduggery, and Stealth." }); 
+        } else if (btnCareerType === "gadgeteer") {
+            this.setState({ career: "Bounty Hunter" }); 
+            this.setState({ specialization: "Gadgeteer" }); 
+            this.setState({ tagline: "Connoisseur of Tech" }); 
+            this.setState({ career_description: "Considering how often a single Bounty Hunter finds himself faced with terrible odds (more often than not, an acquisition has friends or employees who work hard to protect him), it's not surprising how many specialize in high-tech gear and weapons. The Gadgeteer excels at presenting himself as a one-person battle force, at least for a short time. Using both the latest tech and his own personally-modified gear, a Bounty Hunter with this specialization can be hard to stop." }); 
+            this.setState({ career_skills: "Athletics, Brawl, Perception, Piloting (Planetary), Piloting (Space), Ranged (Heavy), Streetwise, Vigilance, Brawl, Coercion, Mechanics, and Ranged (Light)" }); 
+        } else if (btnCareerType === "commando") {
+            this.setState({ career: "Soldier" }); 
+            this.setState({ specialization: "Commando" }); 
+            this.setState({ tagline: "Strike the Target" }); 
+            this.setState({ career_description: "Commandos are specialists trained to strike the enemy from unexpected directions to do the most damage in the most vulnerable locations. Commando teams are often used like surgical instruments by the commanders who have access to them. A Commando knows how to find a target, attack it, disable it, survive the aftermath, and find his way home." }); 
+            this.setState({ career_skills: "Athletics, Brawl, Knowledge (Warfare), Medicine, Melee, Ranged (Light), Ranged (Heavy), Survival, Brawl, Melee, Resilience, and Survival" }); 
+        } else if (btnCareerType === "medic") {
+            this.setState({ career: "Soldier" }); 
+            this.setState({ specialization: "Medic" }); 
+            this.setState({ tagline: "Save the Team" }); 
+            this.setState({ career_description: "The Alliance cannot afford to fight a war of attrition the way the Empire can. The enemy can pour thousands of stormtroopers and other forces into a meat-grinder of a battle, taking horrific casualties, without blinking an eye over its losses. Every soldier of the Rebellion is, on the other hand, a valuable asset whose loss Alliance High Command feels keenly. The Medic serves to prevent as many of those losses as possible." }); 
+            this.setState({ career_skills: "Athletics, Brawl, Knowledge (Warfare), Medicine, Melee, Ranged (Light), Ranged (Heavy), Survival, Knowledge (Xenology), Medicine. Resilience, and Vigilance" }); 
+        } else if (btnCareerType === "sage") {
+            this.setState({ career: "Jedi" }); 
+            this.setState({ specialization: "Sage" }); 
+            this.setState({ tagline: "Disciple of Harmony" }); 
+            this.setState({ career_description: "Many Jedi know the universal truth: knowledge is power, and understanding a situation can give one a decisive advantage. This holds just as true when resolving disputes or negotiations as it does on the battlefield. A Sage focuses on studying the world around him, recognizing that information offers tre­mendous advantages to himself and his allies. He then uses that power to help change the hearts and minds of others to achieve his goals." }); 
+            this.setState({ career_skills: "Cool, Discipline, Knowledge (Education), Knowledge (Lore), Leadership, Negotiation, Discipline, Knowledge (Education), Knowledge (Xenology), and Medicine" }); 
+        } else if (btnCareerType === "protector") {
+            this.setState({ career: "Jedi" }); 
+            this.setState({ specialization: "Protector" }); 
+            this.setState({ tagline: "Keeping the Peace" }); 
+            this.setState({ career_description: "Jedi are often driven by their compassion for the plights of those who cannot protect themselves. Pro­tectors ensure these innocents never come to harm. Few are tougher than a Protector, and even fewer can get through his guard to attack those he defends. Even if his charges do suffer harm, the Protector possesses basic medical knowledge to heal their wounds." }); 
+            this.setState({ career_skills: "Brawl, Cool, Discipline, Melee, Resilience, Vigilance, Ath­letics, Medicine, Ranged (Light), and Resilience" }); 
+        }
     };
 
     render() {
@@ -285,63 +333,66 @@ class Create extends Component {
                         Career Selection
     </div>
                     <div className="card-body background">
-                        <h3 className="careerHeader"> : </h3>
+                        <h3 className="careerHeader">{this.state.career} : {this.state.specialization}</h3>
+                        <h5 className="careerHeader">{this.state.tagline}</h5>
+                        <p>{this.state.career_description}</p>
+                        <p><b>Career Skills: </b>{this.state.career_skills}</p>
                         <div className={["buttonDiv"]}>
                                 <input
                                     type="button"
                                     value="Smuggler - Gunslinger"
                                     data-value="gunslinger"
                                     className="btn btn-outline-warning career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Smuggler - Pilot"
                                     data-value="pilot"
                                     className="btn btn-outline-warning career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Hunter - Assassin"
                                     data-value="assassin"
                                     className="btn btn-outline-danger career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Hunter - Gadgeteer"
                                     data-value="gadgeteer"
                                     className="btn btn-outline-danger career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Soldier - Commando"
                                     data-value="commando"
                                     className="btn btn-outline-primary career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Soldier - Medic"
                                     data-value="medic"
                                     className="btn btn-outline-primary career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Jedi - Sage"
                                     data-value="sage"
                                     className="btn btn-outline-success career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                                 <input
                                     type="button"
                                     value="Jedi - Protector"
                                     data-value="protector"
                                     className="btn btn-outline-success career-button"
-                                    onClick={this.handleSpeciesBtnClick}
+                                    onClick={this.handleCareerBtnClick}
                                 />
                             </div>
         </div>
