@@ -1,15 +1,45 @@
-.speciesStats{
-    text-align: center;
-}
+
 
 .additionalStats{
     display: inline;
 }
 
-.card {
-    margin: 20px;
+.personal-card {
+    margin: 40px;
 }
 
 .species-button {
-    margin: 10px 5px 0px 5px;
+    margin: 20px 5px 0px 5px;
+}
+
+.career-button {
+    margin: 20px 5px 0px 5px;
+}
+
+.species-info {
+    margin: 20px 20px 20px 60px;
+    height: auto;
+    width: 950px;
+}
+
+.image-card {
+    height: auto;
+    width: 380px;
+    margin: 20px 20px 20px 10px;
+}
+
+.career-card {
+    margin: 0px 40px 40px 40px;
+}
+
+.inlineText {
+    display: inline;
+}
+
+.background {
+    background: url("https://s3.amazonaws.com/project-3-20190122205700-deployment/brushed.png");
+}
+
+.careerHeader {
+    text-align: center;
 }
