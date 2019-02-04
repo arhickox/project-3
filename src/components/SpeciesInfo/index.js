@@ -6,7 +6,7 @@ function SpeciesInfo(props) {
         <div className="card">
             <div className="card-header">
                 Featured
-  </div>
+            </div>
             <div className="card-body">
                 <h5 className="card-title">Species Selection</h5>
                 <div className={["col-sm-6", "species_stats"]}>

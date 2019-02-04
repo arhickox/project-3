@@ -1,0 +1,32 @@
+#creation_container {
+    width: 80%;
+    height: auto;
+    margin: 30px auto 30px auto;
+    background-image: url("https://s3.amazonaws.com/project-3-20190122205700-deployment/brushed.png");
+    padding: 20px;
+}
+
+.species-button {
+    margin: 0px 5px 0px 5px;
+}
+
+#species_button_row {
+    margin: auto;
+}
+
+.career_block {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin: 0px 15px 0px 20px;
+    width: 170px;
+}
+
+.species_img {
+    margin: 0px 0px 0px 60px;
+}
+
+#careerMainContainer {
+    flex-direction: row;
+}
