@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./style.css";
+import "../SpeciesOverall/style.css";
 
 class SpeciesInfo extends Component {
     state = {
