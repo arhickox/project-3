@@ -18,7 +18,16 @@ class Create extends Component {
         specialization: "",
         tagline: "",
         career_description: "",
-        career_skills: ""
+        career_skills: "",
+        fullname: "",
+        gender: "",
+        height: "",
+        weight: "",
+        haircolor: "",
+        eyecolor: "",
+        bodytype: "",
+        scars: false,
+        notes: ""
     }
 
     handleSpeciesBtnClick = event => {
@@ -213,24 +222,105 @@ class Create extends Component {
         }
     };
 
-    render() {
-        return (
+handleChange = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+        [name]: value
+    });
+}
 
-            <div>
-                <div className="card personal-card">
-                    <div className="card-header">
-                        Personal Information
-                    </div>
-                    <div className="card-body background">
-                        words
+handleSubmit = event => {
+    console.log('A Character was created: ' + this.state);
+    event.preventDefault();
+}
+
+render() {
+    return (
+
+        <div>
+            <div className="card personal-card">
+                <div className="card-header">
+                    Personal Information
+    </div>
+                <div className="card-body background">
+                    <div className="container col">
+                        <h1>Personal Information</h1><br />
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-row">
+                                <div className="form-group col-6">
+                                    <label className="newCharacterName">Character Name</label>
+                                    <input type="text" className="form-control" id="newCharacterName" name="fullname" aria-describedby="nameCharacter" placeholder="Name of your character" value={this.state.fullname} onChange={this.handleChange} />
+                                </div>
+                                <div className="form-group col-6">
+                                    <label className="newCharacterGender">Gender</label>
+                                    <input type="text" className="form-control" id="newCharacterGender" name="gender" aria-describedby="genderCharater" placeholder="Gender of your character" value={this.state.gender} onChange={this.handleChange} />
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-6">
+                                    <label className="newCharacterHeight">Height</label>
+                                    <input type="text" className="form-control" id="newCharacterHeight" name="height" aria-describedby="heightCharacter" placeholder="Height of your character" value={this.state.height} onChange={this.handleChange} />
+                                </div>
+                                <div className="form-group col-6">
+                                    <label className="newCharacterWeight">Weight <i className="fas fa-weight    "></i></label>
+                                    <input type="text" className="form-control" id="newCharacterWeight" name="weight" aria-describedby="weightCharacter" placeholder="Weight of your character" value={this.state.weight} onChange={this.handleChange} />
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-6">
+                                    <label className="newCharacterHair">Hair Color</label>
+                                    <input type="text" className="form-control" id="newCharacterHair" name="haircolor" aria-describedby="hairCharacter" placeholder="Hair color of your character" value={this.state.haircolor} onChange={this.handleChange} />
+                                </div>
+                                <div className="form-group col-6">
+                                    <label className="newCharacterEyes">Eyes Color</label>
+                                    <input type="text" className="form-control" id="newCharacterEyes" name="eyecolor" aria-describedby="eyeCharacter" placeholder="Eye color of your character" value={this.state.eyecolor} onChange={this.handleChange} />
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <div className="form-group col-6">
+                                    <label className="newCharacterBodyType">Body Type</label>
+                                    <input type="text" className="form-control" id="newCharacterBodyType" name="bodytype" aria-describedby="bodyTypeCharacter" placeholder="Body type of your character" value={this.state.bodytype} onChange={this.handleChange} />
+                                </div>
+                                <div className="form-group col-6">
+                                    <label className="newCharacterScarSelect">Scars</label>
+                                    <select className="form-control" name="scars" value={this.state.scars} onChange={this.handleChange} id="newCharacterScarSelect" aria-describedby="scarSelectCharacter" >
+                                        <option defaultValue="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="newCharacterFeatures">Notable Features</label>
+                                <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleChange} id="newCharacterFeatures" rows="3"></textarea>
+                            </div>
+                            <input type="submit" value="Submit" className="btn btn-info" onClick={this.handleSubmit} />
+                        </form>
+                        <div className="col-6">
+                            <pre>
+                                <code>
+                                    <p>Character Name: {this.state.fullname}</p>
+                                    <p>Gender: {this.state.gender}</p>
+                                    <p>Height: {this.state.height}</p>
+                                    <p>Weight: {this.state.weight}</p>
+                                    <p>Hair Color: {this.state.haircolor}</p>
+                                    <p>Eye Color: {this.state.eyecolor}</p>
+                                    <p>Body Type: {this.state.bodytype}</p>
+                                    <p>Scars: {this.state.scars}</p>
+                                    <p>Notes: {this.state.notes}</p>
+                                </code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
-                <div className={["row"]}>
+            </div>
+            <div className={["row"]}>
 
-                    <div className="card species-info">
-                        <div className="card-header">
-                            Species Selection
-                        </div>
+                <div className="card species-info">
+                    <div className="card-header">
+                        Species Selection
+        </div>
                     <div className="card-body background">
                         <div className={["species_stats"]}>
                             <b>Brawn:</b> {this.state.brawn} <br />
@@ -319,87 +409,87 @@ class Create extends Component {
                     </div>
                 </div>
 
-                    <div className="card image-card">
-                        <div className="card-header">
-                            {this.state.species}
-                        </div>
-                        <div className="card-body">
-                            {this.state.image}
-                        </div>
-                    </div>
-                </div>
-                <div className="card career-card">
+                <div className="card image-card">
                     <div className="card-header">
-                        Career Selection
-    </div>
-                    <div className="card-body background">
-                        <h3 className="careerHeader">{this.state.career} : {this.state.specialization}</h3>
-                        <h5 className="careerHeader">{this.state.tagline}</h5>
-                        <p>{this.state.career_description}</p>
-                        <p><b>Career Skills: </b>{this.state.career_skills}</p>
-                        <div className={["buttonDiv"]}>
-                            <input
-                                type="button"
-                                value="Smuggler - Gunslinger"
-                                data-value="gunslinger"
-                                className="btn btn-outline-warning career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Smuggler - Pilot"
-                                data-value="pilot"
-                                className="btn btn-outline-warning career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Hunter - Assassin"
-                                data-value="assassin"
-                                className="btn btn-outline-danger career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Hunter - Gadgeteer"
-                                data-value="gadgeteer"
-                                className="btn btn-outline-danger career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Soldier - Commando"
-                                data-value="commando"
-                                className="btn btn-outline-primary career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Soldier - Medic"
-                                data-value="medic"
-                                className="btn btn-outline-primary career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Jedi - Sage"
-                                data-value="sage"
-                                className="btn btn-outline-success career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                            <input
-                                type="button"
-                                value="Jedi - Protector"
-                                data-value="protector"
-                                className="btn btn-outline-success career-button"
-                                onClick={this.handleCareerBtnClick}
-                            />
-                        </div>
+                        {this.state.species}
+                    </div>
+                    <div className="card-body">
+                        {this.state.image}
                     </div>
                 </div>
             </div>
+            <div className="card career-card">
+                <div className="card-header">
+                    Career Selection
+    </div>
+                <div className="card-body background">
+                    <h3 className="careerHeader">{this.state.career} : {this.state.specialization}</h3>
+                    <h5 className="careerHeader">{this.state.tagline}</h5>
+                    <p>{this.state.career_description}</p>
+                    <p><b>Career Skills: </b>{this.state.career_skills}</p>
+                    <div className={["buttonDiv"]}>
+                        <input
+                            type="button"
+                            value="Smuggler - Gunslinger"
+                            data-value="gunslinger"
+                            className="btn btn-outline-warning career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Smuggler - Pilot"
+                            data-value="pilot"
+                            className="btn btn-outline-warning career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Hunter - Assassin"
+                            data-value="assassin"
+                            className="btn btn-outline-danger career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Hunter - Gadgeteer"
+                            data-value="gadgeteer"
+                            className="btn btn-outline-danger career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Soldier - Commando"
+                            data-value="commando"
+                            className="btn btn-outline-primary career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Soldier - Medic"
+                            data-value="medic"
+                            className="btn btn-outline-primary career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Jedi - Sage"
+                            data-value="sage"
+                            className="btn btn-outline-success career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                        <input
+                            type="button"
+                            value="Jedi - Protector"
+                            data-value="protector"
+                            className="btn btn-outline-success career-button"
+                            onClick={this.handleCareerBtnClick}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        );
-    };
+    );
+};
 }
 export default Create;
