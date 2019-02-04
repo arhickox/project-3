@@ -34,7 +34,7 @@ class PersonalInfo extends Component {
     }
     render() {
         return (
-            <div className="container col-8">
+            <div className="container col">
                 <h1>Personal Information</h1><br />
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-row">
