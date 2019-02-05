@@ -48,7 +48,7 @@ class Create extends Component {
             this.setState({ experience: 110 });
             this.setState({ ability: <text>"Humans start the game with <u>one rank in two different non-career skills of their choice</u>. They still may not train these skills above rank 2 at character creation."</text> });
         } else if (btnSpeciesType === "twilek") {
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' className='species_img' height='450' width='290' /> });
             this.setState({ species: "Twi'lek" });
             this.setState({ brawn: 1 });
             this.setState({ agility: 2 });
@@ -232,7 +232,7 @@ handleChange = event => {
 }
 
 handleSubmit = event => {
-    console.log('A Character was created: ' + this.state);
+    console.log(this.state);
     event.preventDefault();
 }
 
