@@ -275,17 +275,10 @@ class Create extends Component {
         });
     }
 
-<<<<<<< HEAD
-handleSubmit = event => {
-    console.log(this.state);
-    event.preventDefault();
-}
-=======
     handleSubmit = event => {
-        console.log('A Character was created: ' + this.state);
+        console.log(this.state);
         event.preventDefault();
     }
->>>>>>> b63ab404d5540fcaf8dea2b99391b14731282c8b
 
     render() {
         return (
