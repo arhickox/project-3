@@ -75,7 +75,7 @@ app.delete('/items', function(req, res) {
 });
 
 app.delete('/items/*', function(req, res) {
-  // Add your CODE here
+  // Add your CODE here!
   res.json({success: 'delete call succeed!', url: req.url});
 });
 
