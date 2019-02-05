@@ -94,3 +94,7 @@
     color: #E500E5;
     font-weight: bold;
 }
+
+.btn-block {
+    margin: 30px;
+}
