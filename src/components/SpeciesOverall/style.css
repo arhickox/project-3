@@ -1,5 +1,3 @@
-
-
 .additionalStats{
     display: inline;
 }
@@ -42,4 +40,57 @@
 
 .careerHeader {
     text-align: center;
+}
+
+.skill-form-attributes {
+    width: 15%;
+    margin: auto;
+    text-align: center;
+}
+
+.skill-form-skills {
+    width: 7%;
+    margin: 20px auto auto auto;
+    text-align: center;
+}
+
+.skill-form-combat {
+    width: 16%;
+    margin: auto;
+    text-align: center;
+}
+
+.skill-form-knowledge {
+    width: 12%;
+    margin: auto;
+    text-align: center;
+}
+
+.brawn_color {
+    color: red;
+    font-weight: bold;
+}
+
+.agility_color {
+    color: green;
+    font-weight: bold;
+}
+
+.intelligence_color {
+    color: #0198E1;
+    font-weight: bold;
+}
+.cunning_color {
+    color: #F1BE13;
+    font-weight: bold;
+}
+
+.willpower_color {
+    color: #660066;
+    font-weight: bold;
+}
+
+.presence_color {
+    color: #E500E5;
+    font-weight: bold;
 }
