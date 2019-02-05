@@ -106,7 +106,7 @@ class Create extends Component {
             this.setState({ ability: <text>Twi'leks begin the game with one rank in either <u>Charm</u> or <u>Deception</u>. They still may not train Charm or Deception above rank 2 during character creation. When making skill checks, Twi'leks may remove [1 Setback Die] imposed due to arid or hot environmental conditions."</text> });
         } else if (btnSpeciesType === "wookiee") {
             this.setState({ species: "Wookiee" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/wookiee.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/wookiee.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 3 });
             this.setState({ speciesAgility: 2 });
             this.setState({ speciesIntelligence: 2 });
@@ -119,7 +119,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Wookiees begin the game with one rank in <u>Brawl</u>. They still may not train Brawl above rank 2 during character creation. <br /> <b>Wookiee Rage: </b> When a Wookiee has suffered any wounds, he deals + 1 damage to Brawl and Melee attacks. When a Wookiee is Critically Injured, he instead deals + 2 damage to Brawl and Melee attacks."</text> });
         } else if (btnSpeciesType === "rodian") {
             this.setState({ species: "Rodian" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/rodian.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/rodian.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 2 });
             this.setState({ speciesAgility: 3 });
             this.setState({ speciesIntelligence: 2 });
@@ -132,7 +132,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Rodians begin the game with one rank in <u>Survival</u>. They still may not train Survival above rank 2 during character creation. Rodians start with one rank in the <u>Expert Tracker talent</u>."</text> });
         } else if (btnSpeciesType === "zabrak") {
             this.setState({ species: "Zabrak" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/zabrak.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/zabrak.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 2 });
             this.setState({ speciesAgility: 2 });
             this.setState({ speciesIntelligence: 2 });
@@ -145,7 +145,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Zabrak begin the game with one rank in <u>Survival</u>. They still may not train Survival above rank 2 during character creation. <br /><b>Fearsome Counterance: </b> Zabrak add automatic [1 Advantage] to all Coercion checks they make."</text> });
         } else if (btnSpeciesType === "ithorian") {
             this.setState({ species: "Ithorian" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/ithorian.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/ithorian.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 2 });
             this.setState({ speciesAgility: 1 });
             this.setState({ speciesIntelligence: 2 });
@@ -158,7 +158,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Ithorians begin the game with one rank in <u>Survival</u>. They still may not train Survival above rank 2 during character creation. <br /> <b>Ithorian Bellow: </b> With two mouths and four throats, Ithorians have a unique natural weapon they can call upon when threatened (Resilience; Damage 6; Critical 4; Range [Short]; Blast 3, Concussive 1, Slow-Firing 2, Stun Damage). Each time they use this ability, they suffer 3 strain."</text> });
         } else if (btnSpeciesType === "duros") {
             this.setState({ species: "Duros" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/duros.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/duros.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 1 });
             this.setState({ speciesAgility: 2 });
             this.setState({ speciesIntelligence: 3 });
@@ -171,7 +171,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Duros begin the game with one rank in <u>Piloting (Space)</u>. They still may not train Piloting (Space) above rank 2 during character creation. <br /><b>Intuitive Navigation: </b> Duros may add [1 Advantage] to all Astrogation checks they make."</text> });
         } else if (btnSpeciesType === "gand") {
             this.setState({ species: "Gand" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/gand.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/gand.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 2 });
             this.setState({ speciesAgility: 2 });
             this.setState({ speciesIntelligence: 2 });
@@ -184,7 +184,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Gands begin the game with one rank in <u>Discipline</u>. They still may not train Discipline above rank 2 during character creation. <br /><b>Ammonia Breathers: </b> One notable difference between the two main sub-species of Gand is that one has lungs and one does not. Those that have lungs breathe an ammonia gas mixture. Those without lungs do not respire and gain all necessary metabolic substances through food. When playing a Gand, each player chooses whether he wishes his character to have lungs or not. If he selects to be playing a lungless Gand, his character is immune to suffocation (but not the wounds suffered from being exposed to vacuum). If he chooses to play a Gand with lungs, he starts the game with an ammonia respirator, and treats oxygen as a dangerous atmosphere with Rating 8. However, he gains + 10 starting XP."</text> });
         } else if (btnSpeciesType === "moncalamari") {
             this.setState({ species: "Mon Calamari" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/monCalamari.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/monCalamari.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 2 });
             this.setState({ speciesAgility: 2 });
             this.setState({ speciesIntelligence: 3 });
@@ -197,7 +197,7 @@ class Create extends Component {
             this.setState({ ability: <text>"Mon Calamari begin the game with one rank in <u>Knowledge (Education)</u>. They still may not train Knowledge (Education) above rank 2 during character creation. <br /><b>Amphibious: </b> Mon Calamari can breathe underwater without penalty and never suffer movement penalties for traveling through water."</text> });
         } else if (btnSpeciesType === "droid") {
             this.setState({ species: "Droid" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/droid.jpg' class='species_img' height='450' width='290' /> });
+            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/droid.jpg' className='species_img' height='450' width='290' /> });
             this.setState({ speciesBrawn: 1 });
             this.setState({ speciesAgility: 1 });
             this.setState({ speciesIntelligence: 1 });
@@ -286,75 +286,59 @@ class Create extends Component {
             <div>
                 <div className="card personal-card">
                     <div className="card-header">
-                    <i class="far fa-pencil-alt"></i> Personal Information <i class="far fa-pencil-alt"></i>
+                    <i className="far fa-pencil-alt"></i> Personal Information <i className="far fa-pencil-alt"></i>
     </div>
                     <div className="card-body background">
                         <div className="container col">
-                            <form onSubmit={this.handleSubmit}>
+                            <form noValidate onSubmit={this.handleSubmit}>
                                 <div className="form-row">
                                     <div className="form-group col-6">
-                                        <label className="newCharacterName">Character Name <i class="far fa-signature"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterName" name="fullname" aria-describedby="nameCharacter" placeholder="Name of your character" value={this.state.fullname} onChange={this.handleChange} />
+                                        <label className="newCharacterName">Character Name <i className="far fa-signature"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterName" name="fullname" aria-describedby="nameCharacter" placeholder="Name of your character" value={this.state.fullname} onChange={this.handleChange} required/>
                                     </div>
                                     <div className="form-group col-6">
-                                        <label className="newCharacterGender">Gender <i class="far fa-venus-mars"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterGender" name="gender" aria-describedby="genderCharater" placeholder="Gender of your character" value={this.state.gender} onChange={this.handleChange} />
+                                        <label className="newCharacterGender">Gender <i className="far fa-venus-mars"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterGender" name="gender" aria-describedby="genderCharater" placeholder="Gender of your character" value={this.state.gender} onChange={this.handleChange} required/>
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-6">
-                                        <label className="newCharacterHeight">Height <i class="far fa-ruler"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterHeight" name="height" aria-describedby="heightCharacter" placeholder="Height of your character" value={this.state.height} onChange={this.handleChange} />
+                                        <label className="newCharacterHeight">Height <i className="far fa-ruler"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterHeight" name="height" aria-describedby="heightCharacter" placeholder="Height of your character" value={this.state.height} onChange={this.handleChange} required/>
                                     </div>
                                     <div className="form-group col-6">
-                                        <label className="newCharacterWeight">Weight <i class="far fa-weight"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterWeight" name="weight" aria-describedby="weightCharacter" placeholder="Weight of your character" value={this.state.weight} onChange={this.handleChange} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-6">
-                                        <label className="newCharacterHair">Hair Color <i class="far fa-head-side"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterHair" name="haircolor" aria-describedby="hairCharacter" placeholder="Hair color of your character" value={this.state.haircolor} onChange={this.handleChange} />
-                                    </div>
-                                    <div className="form-group col-6">
-                                        <label className="newCharacterEyes">Eye Color <i class="far fa-eye"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterEyes" name="eyecolor" aria-describedby="eyeCharacter" placeholder="Eye color of your character" value={this.state.eyecolor} onChange={this.handleChange} />
+                                        <label className="newCharacterWeight">Weight <i className="far fa-weight"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterWeight" name="weight" aria-describedby="weightCharacter" placeholder="Weight of your character" value={this.state.weight} onChange={this.handleChange} required/>
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-6">
-                                        <label className="newCharacterBodyType">Body Type <i class="far fa-walking"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterBodyType" name="bodytype" aria-describedby="bodyTypeCharacter" placeholder="Body type of your character" value={this.state.bodytype} onChange={this.handleChange} />
+                                        <label className="newCharacterHair">Hair Color <i className="far fa-head-side"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterHair" name="haircolor" aria-describedby="hairCharacter" placeholder="Hair color of your character" value={this.state.haircolor} onChange={this.handleChange} required/>
                                     </div>
                                     <div className="form-group col-6">
-                                        <label className="newCharacterScarSelect">Scars <i class="far fa-knife-kitchen"></i></label>
-                                        <select className="form-control" name="scars" value={this.state.scars} onChange={this.handleChange} id="newCharacterScarSelect" aria-describedby="scarSelectCharacter" >
+                                        <label className="newCharacterEyes">Eye Color <i className="far fa-eye"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterEyes" name="eyecolor" aria-describedby="eyeCharacter" placeholder="Eye color of your character" value={this.state.eyecolor} onChange={this.handleChange} required/>
+                                    </div>
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group col-6">
+                                        <label className="newCharacterBodyType">Body Type <i className="far fa-walking"></i></label>
+                                        <input type="text" className="form-control" id="newCharacterBodyType" name="bodytype" aria-describedby="bodyTypeCharacter" placeholder="Body type of your character" value={this.state.bodytype} onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group col-6">
+                                        <label className="newCharacterScarSelect">Scars <i className="far fa-knife-kitchen"></i></label>
+                                        <select className="form-control" name="scars" value={this.state.scars} onChange={this.handleChange} id="newCharacterScarSelect" aria-describedby="scarSelectCharacter" required>
                                             <option defaultValue="No">No</option>
                                             <option value="Yes">Yes</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="newCharacterFeatures">Notable Features <i class="far fa-list-ul"></i></label>
+                                    <label className="newCharacterFeatures">Notable Features <i className="far fa-list-ul"></i></label>
                                     <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleChange} id="newCharacterFeatures" rows="3"></textarea>
                                 </div>
-                                <input type="submit" value="Submit" className="btn btn-info" onClick={this.handleSubmit} />
                             </form>
-                            <div className="col-6">
-                                <pre>
-                                    <code>
-                                        <p>Character Name: {this.state.fullname}</p>
-                                        <p>Gender: {this.state.gender}</p>
-                                        <p>Height: {this.state.height}</p>
-                                        <p>Weight: {this.state.weight}</p>
-                                        <p>Hair Color: {this.state.haircolor}</p>
-                                        <p>Eye Color: {this.state.eyecolor}</p>
-                                        <p>Body Type: {this.state.bodytype}</p>
-                                        <p>Scars: {this.state.scars}</p>
-                                        <p>Notes: {this.state.notes}</p>
-                                    </code>
-                                </pre>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -362,7 +346,7 @@ class Create extends Component {
 
                     <div className="card species-info">
                         <div className="card-header">
-                        <i class="far fa-user"></i> Species Selection <i class="far fa-user"></i>
+                        <i className="far fa-user"></i> Species Selection <i className="far fa-user"></i>
         </div>
                         <div className="card-body background">
                             <div className={["species_stats"]}>
@@ -463,7 +447,7 @@ class Create extends Component {
                 </div>
                 <div className="card career-card">
                     <div className="card-header">
-                    <i class="far fa-tools"></i> Career Selection <i class="far fa-tools"></i>
+                    <i className="far fa-tools"></i> Career Selection <i className="far fa-tools"></i>
                     </div>
                     <div className="card-body background">
                         <h3 className="careerHeader">{this.state.career} : {this.state.specialization}</h3>
@@ -533,15 +517,15 @@ class Create extends Component {
 
                 <div className="card personal-card">
                     <div className="card-header">
-                    <i class="far fa-clipboard-list-check"></i> Character Skills <i class="far fa-clipboard-list-check"></i>
+                    <i className="far fa-clipboard-list-check"></i> Character Skills <i className="far fa-clipboard-list-check"></i>
     </div>
                     <div className="card-body background">
                         <div className="container col">
-                            <h4 className="careerHeader"><i class="far fa-scroll"></i> Player Attributes <i class="far fa-scroll"></i></h4> <br />
+                            <h4 className="careerHeader"><i className="far fa-scroll"></i> Player Attributes <i className="far fa-scroll"></i></h4> <br />
                             <div className="row">
                                 <div className="form-group skill-form-attributes">
-                                    <label for="brawn"><span className="brawn_color">Brawn</span></label>
-                                    <select className="form-control" id="brawn" value={this.state.brawn} onChange={this.handleChange}>
+                                    <label htmlFor="brawn"><span className="brawn_color">Brawn</span></label>
+                                    <select className="form-control" id="brawn" defaultValue={this.state.brawn} onChange={this.handleChange}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -551,8 +535,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-attributes">
-                                    <label for="agility"><span className="agility_color">Agility</span></label>
-                                    <select className="form-control" id="agility" value={this.state.agility}>
+                                    <label htmlFor="agility"><span className="agility_color">Agility</span></label>
+                                    <select className="form-control" id="agility" defaultValue={this.state.agility}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -562,8 +546,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-attributes">
-                                    <label for="intelliegnce"><span className="intelligence_color">Intelliegnce</span></label>
-                                    <select className="form-control" id="intelliegnce" value={this.state.intelliegnce}>
+                                    <label htmlFor="intelliegnce"><span className="intelligence_color">Intelliegnce</span></label>
+                                    <select className="form-control" id="intelliegnce" defaultValue={this.state.intelliegnce}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -573,8 +557,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-attributes">
-                                    <label for="cunning"><span className="cunning_color">Cunning</span></label>
-                                    <select className="form-control" id="cunning" value={this.state.cunning}>
+                                    <label htmlFor="cunning"><span className="cunning_color">Cunning</span></label>
+                                    <select className="form-control" id="cunning" defaultValue={this.state.cunning}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -584,8 +568,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-attributes">
-                                    <label for="willpower"><span className="willpower_color">Willpower</span></label>
-                                    <select className="form-control" id="willpower" value={this.state.willpower}>
+                                    <label htmlFor="willpower"><span className="willpower_color">Willpower</span></label>
+                                    <select className="form-control" id="willpower" defaultValue={this.state.willpower}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -595,8 +579,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-attributes">
-                                    <label for="presence"><span className="presence_color">Presence</span></label>
-                                    <select className="form-control" id="presence" value={this.state.presence}>
+                                    <label htmlFor="presence"><span className="presence_color">Presence</span></label>
+                                    <select className="form-control" id="presence" defaultValue={this.state.presence}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -607,11 +591,11 @@ class Create extends Component {
                                 </div>
                             </div>
                             <hr />
-                            <h4 className="careerHeader"><i class="far fa-cog"></i> General Skills <i class="far fa-cog"></i></h4> <br />
+                            <h4 className="careerHeader"><i className="far fa-cog"></i> General Skills <i className="far fa-cog"></i></h4> <br />
                             <div className="row">
                                 <div className="form-group skill-form-skills">
-                                    <label for="astrogation"><span className="intelligence_color">Astrogation</span></label>
-                                    <select className="form-control" id="astrogation" value={this.state.astrogation}>
+                                    <label htmlFor="astrogation"><span className="intelligence_color">Astrogation</span></label>
+                                    <select className="form-control" id="astrogation" defaultValue={this.state.astrogation}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -621,8 +605,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="athletics"><span className="brawn_color">Athletics</span></label>
-                                    <select className="form-control" id="athletics" value={this.state.athletics}>
+                                    <label htmlFor="athletics"><span className="brawn_color">Athletics</span></label>
+                                    <select className="form-control" id="athletics" defaultValue={this.state.athletics}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -632,8 +616,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="charm"><span className="presence_color">Charm</span></label>
-                                    <select className="form-control" id="charm" value={this.state.charm}>
+                                    <label htmlFor="charm"><span className="presence_color">Charm</span></label>
+                                    <select className="form-control" id="charm" defaultValue={this.state.charm}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -643,8 +627,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="coercion"><span className="willpower_color">Coercion</span></label>
-                                    <select className="form-control" id="coercion" value={this.state.coercion}>
+                                    <label htmlFor="coercion"><span className="willpower_color">Coercion</span></label>
+                                    <select className="form-control" id="coercion" defaultValue={this.state.coercion}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -654,8 +638,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="computers"><span className="intelligence_color">Computers</span></label>
-                                    <select className="form-control" id="Computers" value={this.state.computers}>
+                                    <label htmlFor="computers"><span className="intelligence_color">Computers</span></label>
+                                    <select className="form-control" id="Computers" defaultValue={this.state.computers}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -665,8 +649,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="cool"><span className="presence_color">Cool</span></label>
-                                    <select className="form-control" id="cool" value={this.state.cool}>
+                                    <label htmlFor="cool"><span className="presence_color">Cool</span></label>
+                                    <select className="form-control" id="cool" defaultValue={this.state.cool}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -676,8 +660,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="coordination"><span className="agility_color">Coordination</span></label>
-                                    <select className="form-control" id="coordination" value={this.state.coordination}>
+                                    <label htmlFor="coordination"><span className="agility_color">Coordination</span></label>
+                                    <select className="form-control" id="coordination" defaultValue={this.state.coordination}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -687,8 +671,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="deception"><span className="cunning_color">Deception</span></label>
-                                    <select className="form-control" id="deception" value={this.state.deception}>
+                                    <label htmlFor="deception"><span className="cunning_color">Deception</span></label>
+                                    <select className="form-control" id="deception" defaultValue={this.state.deception}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -698,8 +682,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="discipline"><span className="willpower_color">Discipline</span></label>
-                                    <select className="form-control" id="discipline" value={this.state.discipline}>
+                                    <label htmlFor="discipline"><span className="willpower_color">Discipline</span></label>
+                                    <select className="form-control" id="discipline" defaultValue={this.state.discipline}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -709,8 +693,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="leadership"><span className="presence_color">Leadership</span></label>
-                                    <select className="form-control" id="leadership" value={this.state.leadership}>
+                                    <label htmlFor="leadership"><span className="presence_color">Leadership</span></label>
+                                    <select className="form-control" id="leadership" defaultValue={this.state.leadership}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -720,8 +704,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="mechanics"><span className="intelligence_color">Mechanics</span></label>
-                                    <select className="form-control" id="mechanics" value={this.state.mechanics}>
+                                    <label htmlFor="mechanics"><span className="intelligence_color">Mechanics</span></label>
+                                    <select className="form-control" id="mechanics" defaultValue={this.state.mechanics}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -733,8 +717,8 @@ class Create extends Component {
                             </div>
                             <div className="row">
                                 <div className="form-group skill-form-skills">
-                                    <label for="medicine"><span className="intelligence_color">Medicine</span></label>
-                                    <select className="form-control" id="medicine" value={this.state.medicine}>
+                                    <label htmlFor="medicine"><span className="intelligence_color">Medicine</span></label>
+                                    <select className="form-control" id="medicine" defaultValue={this.state.medicine}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -744,8 +728,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="negotiation"><span className="presence_color">Negotiation</span></label>
-                                    <select className="form-control" id="negotiation" value={this.state.negotiation}>
+                                    <label htmlFor="negotiation"><span className="presence_color">Negotiation</span></label>
+                                    <select className="form-control" id="negotiation" defaultValue={this.state.negotiation}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -755,8 +739,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="perception"><span className="cunning_color">Perception</span></label>
-                                    <select className="form-control" id="perception" value={this.state.perception}>
+                                    <label htmlFor="perception"><span className="cunning_color">Perception</span></label>
+                                    <select className="form-control" id="perception" defaultValue={this.state.perception}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -766,8 +750,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="planetary"><span className="agility_color">Pilot Planet</span></label>
-                                    <select className="form-control" id="planetary" value={this.state.planetary}>
+                                    <label htmlFor="planetary"><span className="agility_color">Pilot Planet</span></label>
+                                    <select className="form-control" id="planetary" defaultValue={this.state.planetary}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -777,8 +761,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="space"><span className="agility_color">Pilot Space</span></label>
-                                    <select className="form-control" id="space" value={this.state.space}>
+                                    <label htmlFor="space"><span className="agility_color">Pilot Space</span></label>
+                                    <select className="form-control" id="space" defaultValue={this.state.space}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -788,8 +772,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="resilience"><span className="brawn_color">Resilience</span></label>
-                                    <select className="form-control" id="resilience" value={this.state.resilience}>
+                                    <label htmlFor="resilience"><span className="brawn_color">Resilience</span></label>
+                                    <select className="form-control" id="resilience" defaultValue={this.state.resilience}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -799,8 +783,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="skulduggery"><span className="cunning_color">Skulduggery</span></label>
-                                    <select className="form-control" id="skulduggery" value={this.state.skulduggery}>
+                                    <label htmlFor="skulduggery"><span className="cunning_color">Skulduggery</span></label>
+                                    <select className="form-control" id="skulduggery" defaultValue={this.state.skulduggery}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -810,8 +794,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="stealth"><span className="agility_color">Stealth</span></label>
-                                    <select className="form-control" id="stealth" value={this.state.stealth}>
+                                    <label htmlFor="stealth"><span className="agility_color">Stealth</span></label>
+                                    <select className="form-control" id="stealth" defaultValue={this.state.stealth}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -821,8 +805,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="streetwise"><span className="cunning_color">Streetwise</span></label>
-                                    <select className="form-control" id="streetwise" value={this.state.streetwise}>
+                                    <label htmlFor="streetwise"><span className="cunning_color">Streetwise</span></label>
+                                    <select className="form-control" id="streetwise" defaultValue={this.state.streetwise}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -832,8 +816,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="survival"><span className="cunning_color">Survival</span></label>
-                                    <select className="form-control" id="survival" value={this.state.survival}>
+                                    <label htmlFor="survival"><span className="cunning_color">Survival</span></label>
+                                    <select className="form-control" id="survival" defaultValue={this.state.survival}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -843,67 +827,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-skills">
-                                    <label for="vigilance"><span className="willpower_color">Vigilance</span></label>
-                                    <select className="form-control" id="vigilance" value={this.state.vigilance}>
-                                        <option value='0'>0</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <hr />
-                            <h4 className="careerHeader"><i class="far fa-swords"></i> Combat Skills <i class="far fa-swords"></i></h4> <br />
-                            <div className="row">
-                                <div className="form-group skill-form-combat">
-                                    <label for="brawl"><span className="brawn_color">Brawl</span></label>
-                                    <select className="form-control" id="brawl" value={this.state.brawl}>
-                                        <option value='0'>0</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                    </select>
-                                </div>
-                                <div className="form-group skill-form-combat">
-                                    <label for="gunnery"><span className="agility_color">Gunnery</span></label>
-                                    <select className="form-control" id="gunnery" value={this.state.Gunnery}>
-                                        <option value='0'>0</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                    </select>
-                                </div>
-                                <div className="form-group skill-form-combat">
-                                    <label for="melee"><span className="brawn_color">Melee</span></label>
-                                    <select className="form-control" id="melee" value={this.state.melee}>
-                                        <option value='0'>0</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                    </select>
-                                </div>
-                                <div className="form-group skill-form-combat">
-                                    <label for="rangedLight"><span className="agility_color">Ranged - Light</span></label>
-                                    <select className="form-control" id="rangedLight" value={this.state.rangedLight}>
-                                        <option value='0'>0</option>
-                                        <option value='1'>1</option>
-                                        <option value='2'>2</option>
-                                        <option value='3'>3</option>
-                                        <option value='4'>4</option>
-                                        <option value='5'>5</option>
-                                    </select>
-                                </div>
-                                <div className="form-group skill-form-combat">
-                                    <label for="rangedHeavy"><span className="agility_color">Ranged - Heavy</span></label>
-                                    <select className="form-control" id="rangedHeavy" value={this.state.rangedHeavy}>
+                                    <label htmlFor="vigilance"><span className="willpower_color">Vigilance</span></label>
+                                    <select className="form-control" id="vigilance" defaultValue={this.state.vigilance}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -914,11 +839,70 @@ class Create extends Component {
                                 </div>
                             </div>
                             <hr />
-                            <h4 className="careerHeader"><i class="far fa-book"></i> Knowledge Skills <i class="far fa-book"></i></h4> <br />
+                            <h4 className="careerHeader"><i className="far fa-swords"></i> Combat Skills <i className="far fa-swords"></i></h4> <br />
+                            <div className="row">
+                                <div className="form-group skill-form-combat">
+                                    <label htmlFor="brawl"><span className="brawn_color">Brawl</span></label>
+                                    <select className="form-control" id="brawl" defaultValue={this.state.brawl}>
+                                        <option value='0'>0</option>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                    </select>
+                                </div>
+                                <div className="form-group skill-form-combat">
+                                    <label htmlFor="gunnery"><span className="agility_color">Gunnery</span></label>
+                                    <select className="form-control" id="gunnery" defaultValue={this.state.Gunnery}>
+                                        <option value='0'>0</option>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                    </select>
+                                </div>
+                                <div className="form-group skill-form-combat">
+                                    <label htmlFor="melee"><span className="brawn_color">Melee</span></label>
+                                    <select className="form-control" id="melee" defaultValue={this.state.melee}>
+                                        <option value='0'>0</option>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                    </select>
+                                </div>
+                                <div className="form-group skill-form-combat">
+                                    <label htmlFor="rangedLight"><span className="agility_color">Ranged - Light</span></label>
+                                    <select className="form-control" id="rangedLight" defaultValue={this.state.rangedLight}>
+                                        <option value='0'>0</option>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                    </select>
+                                </div>
+                                <div className="form-group skill-form-combat">
+                                    <label htmlFor="rangedHeavy"><span className="agility_color">Ranged - Heavy</span></label>
+                                    <select className="form-control" id="rangedHeavy" defaultValue={this.state.rangedHeavy}>
+                                        <option value='0'>0</option>
+                                        <option value='1'>1</option>
+                                        <option value='2'>2</option>
+                                        <option value='3'>3</option>
+                                        <option value='4'>4</option>
+                                        <option value='5'>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr />
+                            <h4 className="careerHeader"><i className="far fa-book"></i> Knowledge Skills <i className="far fa-book"></i></h4> <br />
                             <div className="row">
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="coreWorlds"><span className="intelligence_color">Core Worlds</span></label>
-                                    <select className="form-control" id="coreWorlds" value={this.state.coreWorlds}>
+                                    <label htmlFor="coreWorlds"><span className="intelligence_color">Core Worlds</span></label>
+                                    <select className="form-control" id="coreWorlds" defaultValue={this.state.coreWorlds}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -928,8 +912,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="education"><span className="intelligence_color">Education</span></label>
-                                    <select className="form-control" id="education" value={this.state.education}>
+                                    <label htmlFor="education"><span className="intelligence_color">Education</span></label>
+                                    <select className="form-control" id="education" defaultValue={this.state.education}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -939,8 +923,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="lore"><span className="intelligence_color">Lore</span></label>
-                                    <select className="form-control" id="lore" value={this.state.lore}>
+                                    <label htmlFor="lore"><span className="intelligence_color">Lore</span></label>
+                                    <select className="form-control" id="lore" defaultValue={this.state.lore}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -950,8 +934,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="outerRim"><span className="intelligence_color">Outer Rim</span></label>
-                                    <select className="form-control" id="outerRim" value={this.state.outerRim}>
+                                    <label htmlFor="outerRim"><span className="intelligence_color">Outer Rim</span></label>
+                                    <select className="form-control" id="outerRim" defaultValue={this.state.outerRim}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -961,8 +945,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="underworld"><span className="intelligence_color">Underworld</span></label>
-                                    <select className="form-control" id="underworld" value={this.state.underworld}>
+                                    <label htmlFor="underworld"><span className="intelligence_color">Underworld</span></label>
+                                    <select className="form-control" id="underworld" defaultValue={this.state.underworld}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -972,8 +956,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="warfare"><span className="intelligence_color">Warfare</span></label>
-                                    <select className="form-control" id="warfare" value={this.state.warfare}>
+                                    <label htmlFor="warfare"><span className="intelligence_color">Warfare</span></label>
+                                    <select className="form-control" id="warfare" defaultValue={this.state.warfare}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -983,8 +967,8 @@ class Create extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group skill-form-knowledge">
-                                    <label for="xenology"><span className="intelligence_color">Xenology</span></label>
-                                    <select className="form-control" id="xenology" value={this.state.xenology}>
+                                    <label htmlFor="xenology"><span className="intelligence_color">Xenology</span></label>
+                                    <select className="form-control" id="xenology" defaultValue={this.state.xenology}>
                                         <option value='0'>0</option>
                                         <option value='1'>1</option>
                                         <option value='2'>2</option>
@@ -997,7 +981,7 @@ class Create extends Component {
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                <input type="submit" name="Submit" className="btn btn-info btn-lg btn-block" onClick={this.handleSubmit} value="Create Character" />
             </div>
 
         );
