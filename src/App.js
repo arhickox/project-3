@@ -6,6 +6,7 @@ import View from './pages/View';
 import Begin from './pages/Begin';
 import Navbar from "./components/Navbar/index";
 import './App.css';
+import { withAuthenticator } from 'aws-amplify-react'
 
 function App() {
   return (
@@ -22,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
