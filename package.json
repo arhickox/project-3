@@ -1,30 +1,26 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "tabletop-app",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "Tabletop api and web",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "lint": "eslint '**/*.js' --quiet",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && NODE_ENV=test nyc mocha -u tdd --reporter spec --exit"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "postinstall": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2"
+    "if-env": "^1.0.4",
+    "mongodb": "^3.1.13"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.0.0",
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "prettier": "^1.15.2"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   }
 }
