@@ -1,0 +1,32 @@
+#leftMain { 
+    height: 500px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: 250px;
+    padding: 50px;
+  }
+  
+  #centerMain {
+    height: 500px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left:10px;
+    margin-right: 10px;
+    padding: 50px;
+  }
+  
+  #rightMain {
+    height: 500px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: auto;
+    padding: 50px;
+  }
+  
+  #main_header {
+    margin-top: 50px;
+    margin-left:600px;
+    margin-right: 10px;
+  }
