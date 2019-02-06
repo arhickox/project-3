@@ -78,36 +78,57 @@
 				}
 			}
 		},
-		"hostingS3AndCloudFront": {
+		"storagetodosTable": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/hosting/template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/storage/todosTable-cloudformation-template.json",
 				"Parameters": {
-					"bucketName": "project-3-20190123120337-hostingbucket",
-					"env": "dev"
+					"tableName": "todos",
+					"partitionKeyName": "id",
+					"partitionKeyType": "S"
 				}
 			}
 		},
-		"authcognito199c689c": {
+		"functiontodosLambda": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/auth/cognito199c689c-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/function/todosLambda-cloudformation-template.json",
 				"Parameters": {
-					"identityPoolName": "cognito199c689c_identitypool_199c689c",
-					"allowUnauthenticatedIdentities": false,
+					"storagetodosTableName": {
+						"Fn::GetAtt": [
+							"storagetodosTable",
+							"Outputs.Name"
+						]
+					},
+					"storagetodosTableArn": {
+						"Fn::GetAtt": [
+							"storagetodosTable",
+							"Outputs.Arn"
+						]
+					}
+				}
+			}
+		},
+		"authcognitobbc7e874": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/auth/cognitobbc7e874-cloudformation-template.yml",
+				"Parameters": {
+					"identityPoolName": "project3_identitypool_ace929d1",
+					"allowUnauthenticatedIdentities": true,
 					"thirdPartyAuth": false,
-					"lambdaLogPolicy": "cognito199c689c_lambda_log_policy",
-					"openIdLambdaRoleName": "cognito199c689c_openid_lambda_role",
-					"openIdRolePolicy": "cognito199c689c_openid_pass_role_policy",
-					"openIdLambdaIAMPolicy": "cognito199c689c_openid_lambda_iam_policy",
-					"openIdLogPolicy": "cognito199c689c_openid_lambda_log_policy",
-					"userPoolName": "cognito199c689c_userpool_199c689c",
+					"lambdaLogPolicy": "project3_lambda_log_policy",
+					"openIdLambdaRoleName": "project3_openid_lambda_role",
+					"openIdRolePolicy": "project3_openid_pass_role_policy",
+					"openIdLambdaIAMPolicy": "project3_openid_lambda_iam_policy",
+					"openIdLogPolicy": "project3_openid_lambda_log_policy",
+					"userPoolName": "project3_userpool_ace929d1",
 					"autoVerifiedAttributes": "email",
 					"mfaConfiguration": "OFF",
 					"mfaTypes": "SMS Text Message",
-					"roleName": "cognito199c689c_sns-role",
-					"roleExternalId": "cognito199c689c_role_external_id",
-					"policyName": "cognito199c689c-sns-policy",
+					"roleName": "project3_sns-role",
+					"roleExternalId": "project3_role_external_id",
+					"policyName": "project3-sns-policy",
 					"smsAuthenticationMessage": "Your authentication code is {####}",
 					"smsVerificationMessage": "Your verification code is {####}",
 					"emailVerificationSubject": "Your verification code",
@@ -116,60 +137,44 @@
 					"passwordPolicyMinLength": 8,
 					"passwordPolicyCharacters": "Requires Lowercase,Requires Uppercase,Requires Numbers,Requires Symbols",
 					"requiredAttributes": "email",
-					"userpoolClientName": "cognito199c689c_app_client",
+					"userpoolClientName": "project3_app_client",
 					"userpoolClientGenerateSecret": true,
 					"userpoolClientRefreshTokenValidity": 30,
 					"userpoolClientReadAttributes": "email",
-					"mfaLambdaRole": "cognito199c689c_totp_lambda_role",
-					"mfaLambdaLogPolicy": "cognito199c689c_totp_lambda_log_policy",
-					"mfaPassRolePolicy": "cognito199c689c_totp_pass_role_policy",
-					"mfaLambdaIAMPolicy": "cognito199c689c_totp_lambda_iam_policy",
-					"userpoolClientLambdaRole": "cognito199c689c_userpoolclient_lambda_role",
-					"userpoolClientLogPolicy": "cognito199c689c_userpoolclient_lambda_log_policy",
-					"userpoolClientLambdaPolicy": "cognito199c689c_userpoolclient_lambda_iam_policy",
+					"mfaLambdaRole": "project3_totp_lambda_role",
+					"mfaLambdaLogPolicy": "project3_totp_lambda_log_policy",
+					"mfaPassRolePolicy": "project3_totp_pass_role_policy",
+					"mfaLambdaIAMPolicy": "project3_totp_lambda_iam_policy",
+					"userpoolClientLambdaRole": "project3_userpoolclient_lambda_role",
+					"userpoolClientLogPolicy": "project3_userpoolclient_lambda_log_policy",
+					"userpoolClientLambdaPolicy": "project3_userpoolclient_lambda_iam_policy",
 					"userpoolClientSetAttributes": false,
-					"useDefault": "default",
-					"resourceName": "cognito199c689c",
 					"authSelections": "identityPoolAndUserPool",
-					"authRoleName": {
-						"Ref": "AuthRoleName"
-					},
-					"unauthRoleName": {
-						"Ref": "UnauthRoleName"
-					},
-					"authRoleArn": {
-						"Fn::GetAtt": [
-							"AuthRole",
-							"Arn"
-						]
-					},
-					"unauthRoleArn": {
-						"Fn::GetAtt": [
-							"UnauthRole",
-							"Arn"
-						]
-					},
-					"env": "dev"
+					"resourceName": "cognitobbc7e874",
+					"unAuthRoleName": "project3-20190205192737-unauthRole",
+					"authRoleName": "project3-20190205192737-authRole",
+					"unAuthRoleArn": "arn:aws:iam::421805193807:role/project3-20190205192737-unauthRole",
+					"authRoleArn": "arn:aws:iam::421805193807:role/project3-20190205192737-authRole"
 				}
 			}
 		},
-		"storageImages": {
+		"apitodosApi": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/api/todosApi-cloudformation-template.json",
 				"Parameters": {
-					"bucketName": "project-3895e20bfa6a64263b9bba294259feb66",
-					"authPolicyName": "s3_amplify_5731fa99",
-					"unauthPolicyName": "s3_amplify_5731fa99",
-					"authRoleName": {
-						"Ref": "AuthRoleName"
+					"functiontodosLambdaName": {
+						"Fn::GetAtt": [
+							"functiontodosLambda",
+							"Outputs.Name"
+						]
 					},
-					"unauthRoleName": {
-						"Ref": "UnauthRoleName"
-					},
-					"authPermissions": "r",
-					"unauthPermissions": "",
-					"env": "dev"
+					"functiontodosLambdaArn": {
+						"Fn::GetAtt": [
+							"functiontodosLambda",
+							"Outputs.Arn"
+						]
+					}
 				}
 			}
 		}

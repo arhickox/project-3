@@ -1,17 +1,20 @@
 {
-    "projectName": "project-3",
-    "version": "1.0",
-    "frontend": "javascript",
+    "projectName": "project3",
+    "projectPath": "/Users/mdiallo13/gt/Projects/project-3",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
     "javascript": {
         "framework": "react",
         "config": {
             "SourceDir": "src",
             "DistributionDir": "build",
-            "BuildCommand": "npm.cmd run-script build",
-            "StartCommand": "npm.cmd run-script start"
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
         }
     },
-    "providers": [
-        "awscloudformation"
-    ]
+    "providers": {
+        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
 }
