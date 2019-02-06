@@ -1,0 +1,5 @@
+{
+    "tableName": "characters",
+    "partitionKeyName": "characterID",
+    "partitionKeyType": "N"
+}
