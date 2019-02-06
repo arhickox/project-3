@@ -172,6 +172,60 @@
 					"env": "dev"
 				}
 			}
+		},
+		"storagedynamo5433fd40": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/storage/dynamo5433fd40-cloudformation-template.json",
+				"Parameters": {
+					"tableName": "characters",
+					"partitionKeyName": "characterID",
+					"partitionKeyType": "N",
+					"env": "dev"
+				}
+			}
+		},
+		"storagecharacterdb": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/storage/characterdb-cloudformation-template.json",
+				"Parameters": {
+					"tableName": "Characters",
+					"partitionKeyName": "CharacterID",
+					"partitionKeyType": "N",
+					"env": "dev"
+				}
+			}
+		},
+		"functionproject3df9f256c": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/function/project3df9f256c-cloudformation-template.json",
+				"Parameters": {
+					"storagedynamo5433fd40Name": {
+						"Fn::GetAtt": [
+							"storagedynamo5433fd40",
+							"Outputs.Name"
+						]
+					},
+					"storagedynamo5433fd40Arn": {
+						"Fn::GetAtt": [
+							"storagedynamo5433fd40",
+							"Outputs.Arn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
+		"functionproject3ca2176b0": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/project-3-20190122205700-deployment/amplify-cfn-templates/function/project3ca2176b0-cloudformation-template.json",
+				"Parameters": {
+					"env": "dev"
+				}
+			}
 		}
 	},
 	"Outputs": {
