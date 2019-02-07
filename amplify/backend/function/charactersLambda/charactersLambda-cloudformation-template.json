@@ -2,13 +2,13 @@
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "Lambda resource stack creation using Amplify CLI",
 	"Parameters": {
-		"storagecharactersTableName": {
+		"storagecharactersdbName": {
 			"Type": "String",
-			"Default": "storagecharactersTableName"
+			"Default": "storagecharactersdbName"
 		},
-		"storagecharactersTableArn": {
+		"storagecharactersdbArn": {
 			"Type": "String",
-			"Default": "storagecharactersTableArn"
+			"Default": "storagecharactersdbArn"
 		}
 	},
 	"Resources": {
@@ -30,15 +30,15 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "project3-20190205192737-deployment",
-					"S3Key": "amplify-builds/charactersLambda-1549429190-latest-build.zip"
+					"S3Bucket": "project3-20190206125528-deployment",
+					"S3Key": "amplify-builds/charactersLambda-1549510971-latest-build.zip"
 				}
 			}
 		},
 		"LambdaExecutionRole": {
 			"Type": "AWS::IAM::Role",
 			"Properties": {
-				"RoleName": "project3LambdaRole84c2c09b",
+				"RoleName": "project3LambdaRoleb92c80ed",
 				"AssumeRolePolicyDocument": {
 					"Version": "2012-10-17",
 					"Statement": [
@@ -108,7 +108,7 @@
 							],
 							"Resource": [
 								{
-									"Ref": "storagecharactersTableArn"
+									"Ref": "storagecharactersdbArn"
 								}
 							]
 						}

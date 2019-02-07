@@ -14,13 +14,13 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "charactersTable";
+let tableName = "charactersdb";
 
 const userIdPresent = false; // TODO: update in case is required to use that definition
 const partitionKeyName = "id";
 const partitionKeyType = "S";
-const sortKeyName = "name";
-const sortKeyType = "S";
+const sortKeyName = "";
+const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
 const path = "/view";
 const UNAUTH = 'UNAUTH';
@@ -70,7 +70,7 @@ app.get(path + hashKeyPath, function(req, res) {
 
   let queryParams = {
     TableName: tableName,
-    KeyConditions: condition
+    ProjectionExpression: "id, name, gender, height, weight, hair_color, eye_color, body_type, scars, notable_features"
   } 
 
   dynamodb.query(queryParams, (err, data) => {
@@ -86,8 +86,11 @@ app.get(path + hashKeyPath, function(req, res) {
  * HTTP Get method for get single object *
  *****************************************/
 
-app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
-  var params = {};
+app.get(path + hashKeyPath + sortKeyPath, function(req, res) {
+  var params = {
+    TableName: tableName,
+    ProjectionExpression: "id, name, gender, height, weight, hair_color, eye_color, body_type, scars, notable_features"
+  };
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   } else {
@@ -175,7 +178,7 @@ app.post(path, function(req, res) {
 * HTTP remove method to delete object *
 ***************************************/
 
-app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
+app.delete(path + hashKeyPath + sortKeyPath, function(req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;

@@ -78,45 +78,43 @@
 				}
 			}
 		},
-		"storagecharactersTable": {
+		"storagecharactersdb": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/storage/charactersTable-cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/storage/charactersdb-cloudformation-template.json",
 				"Parameters": {
-					"tableName": "characters",
+					"tableName": "characterTable",
 					"partitionKeyName": "id",
-					"partitionKeyType": "S",
-					"sortKeyName": "name",
-					"sortKeyType": "S"
+					"partitionKeyType": "S"
 				}
 			}
 		},
 		"functioncharactersLambda": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/function/charactersLambda-cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/function/charactersLambda-cloudformation-template.json",
 				"Parameters": {
-					"storagecharactersTableName": {
+					"storagecharactersdbName": {
 						"Fn::GetAtt": [
-							"storagecharactersTable",
+							"storagecharactersdb",
 							"Outputs.Name"
 						]
 					},
-					"storagecharactersTableArn": {
+					"storagecharactersdbArn": {
 						"Fn::GetAtt": [
-							"storagecharactersTable",
+							"storagecharactersdb",
 							"Outputs.Arn"
 						]
 					}
 				}
 			}
 		},
-		"authcognitofd30b87e": {
+		"authcognitof74fcf09": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/auth/cognitofd30b87e-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/auth/cognitof74fcf09-cloudformation-template.yml",
 				"Parameters": {
-					"identityPoolName": "project3_identitypool_e9a13845",
+					"identityPoolName": "project3_identitypool_34c1199f",
 					"allowUnauthenticatedIdentities": true,
 					"thirdPartyAuth": false,
 					"lambdaLogPolicy": "project3_lambda_log_policy",
@@ -124,7 +122,7 @@
 					"openIdRolePolicy": "project3_openid_pass_role_policy",
 					"openIdLambdaIAMPolicy": "project3_openid_lambda_iam_policy",
 					"openIdLogPolicy": "project3_openid_lambda_log_policy",
-					"userPoolName": "project3_userpool_e9a13845",
+					"userPoolName": "project3_userpool_34c1199f",
 					"autoVerifiedAttributes": "email",
 					"mfaConfiguration": "OFF",
 					"mfaTypes": "SMS Text Message",
@@ -152,18 +150,18 @@
 					"userpoolClientLambdaPolicy": "project3_userpoolclient_lambda_iam_policy",
 					"userpoolClientSetAttributes": false,
 					"authSelections": "identityPoolAndUserPool",
-					"resourceName": "cognitofd30b87e",
-					"unAuthRoleName": "project3-20190205192737-unauthRole",
-					"authRoleName": "project3-20190205192737-authRole",
-					"unAuthRoleArn": "arn:aws:iam::421805193807:role/project3-20190205192737-unauthRole",
-					"authRoleArn": "arn:aws:iam::421805193807:role/project3-20190205192737-authRole"
+					"resourceName": "cognitof74fcf09",
+					"unAuthRoleName": "project3-20190206125528-unauthRole",
+					"authRoleName": "project3-20190206125528-authRole",
+					"unAuthRoleArn": "arn:aws:iam::421805193807:role/project3-20190206125528-unauthRole",
+					"authRoleArn": "arn:aws:iam::421805193807:role/project3-20190206125528-authRole"
 				}
 			}
 		},
-		"apicharactersApi": {
+		"apicharacterApi": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project3-20190205192737-deployment/amplify-cfn-templates/api/charactersApi-cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/api/characterApi-cloudformation-template.json",
 				"Parameters": {
 					"functioncharactersLambdaName": {
 						"Fn::GetAtt": [

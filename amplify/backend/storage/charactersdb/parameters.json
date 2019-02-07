@@ -1,7 +1,5 @@
 {
-    "tableName": "charactersTable",
+    "tableName": "characterTable",
     "partitionKeyName": "id",
-    "partitionKeyType": "S",
-    "sortKeyName": "name",
-    "sortKeyType": "S"
+    "partitionKeyType": "S"
 }

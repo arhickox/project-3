@@ -1,5 +1,12 @@
 import React, { Component } from "react";
+import List from "../List";
+import Details from "../Details";
+import Amplify, { API } from "aws-amplify";
+import aws_exports from "../aws-exports";
 import SpeciesOverall from "../components/SpeciesOverall";
+
+Amplify.configure(aws_exports);
+
 
 class Create extends Component {
     state = {
@@ -266,7 +273,13 @@ class Create extends Component {
         }
     };
 
+
+    async componentDidMount() {
+        await this.fetchList();
+    }
+
     handleChange = event => {
+        const id = event.target.id;
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -275,10 +288,51 @@ class Create extends Component {
         });
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         console.log(this.state);
         event.preventDefault();
+        await API.post("charactersAPI", "/view", {
+            body: {
+                name: this.state.name,
+                gender: this.state.gender,
+                height: this.state.height,
+                weight: this.state.weight,
+                hair_color: this.state.haircolor,
+                eye_color: this.state.eyecolor,
+                body_type: this.state.bodytype,
+                scars: this.state.scars,
+                notable_features: this.state.notes
+            }
+        });
+        this.setState({
+            name: "",
+            gender: "",
+            height: "",
+            weight: "",
+            hair_color: "",
+            eye_color: "",
+            body_type: "",
+            scars: "",
+            notable_features: ""
+        });
+        this.fetchList();
+    };
+
+    async fetchList() {
+        const response = await API.get("characters", "/view");
+        this.setState({ list: [...response] });
     }
+
+    loadDetailsPage = async id => {
+        const response = await API.get("characters", "/view/" + id);
+        this.setState({ item: { ...response }, showDetails: true });
+    };
+    loadListPage = () => {
+        this.setState({ showDetails: false });
+    };
+    delete = async id => {
+        //TODO: Implement functionality
+    };
 
     render() {
         return (
@@ -286,45 +340,45 @@ class Create extends Component {
             <div>
                 <div className="card personal-card">
                     <div className="card-header">
-                    <i className="far fa-pencil-alt"></i> Personal Information <i className="far fa-pencil-alt"></i>
-    </div>
+                        <i className="far fa-pencil-alt"></i> Personal Information <i className="far fa-pencil-alt"></i>
+                    </div>
                     <div className="card-body background">
                         <div className="container col">
                             <form noValidate onSubmit={this.handleSubmit}>
                                 <div className="form-row">
                                     <div className="form-group col-6">
                                         <label className="newCharacterName">Character Name <i className="far fa-signature"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterName" name="fullname" aria-describedby="nameCharacter" placeholder="Name of your character" value={this.state.fullname} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterName" name="fullname" aria-describedby="nameCharacter" placeholder="Name of your character" value={this.state.fullname} onChange={this.handleChange} required />
                                     </div>
                                     <div className="form-group col-6">
                                         <label className="newCharacterGender">Gender <i className="far fa-venus-mars"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterGender" name="gender" aria-describedby="genderCharater" placeholder="Gender of your character" value={this.state.gender} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterGender" name="gender" aria-describedby="genderCharater" placeholder="Gender of your character" value={this.state.gender} onChange={this.handleChange} required />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-6">
                                         <label className="newCharacterHeight">Height <i className="far fa-ruler"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterHeight" name="height" aria-describedby="heightCharacter" placeholder="Height of your character" value={this.state.height} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterHeight" name="height" aria-describedby="heightCharacter" placeholder="Height of your character" value={this.state.height} onChange={this.handleChange} required />
                                     </div>
                                     <div className="form-group col-6">
                                         <label className="newCharacterWeight">Weight <i className="far fa-weight"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterWeight" name="weight" aria-describedby="weightCharacter" placeholder="Weight of your character" value={this.state.weight} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterWeight" name="weight" aria-describedby="weightCharacter" placeholder="Weight of your character" value={this.state.weight} onChange={this.handleChange} required />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-6">
                                         <label className="newCharacterHair">Hair Color <i className="far fa-head-side"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterHair" name="haircolor" aria-describedby="hairCharacter" placeholder="Hair color of your character" value={this.state.haircolor} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterHair" name="haircolor" aria-describedby="hairCharacter" placeholder="Hair color of your character" value={this.state.haircolor} onChange={this.handleChange} required />
                                     </div>
                                     <div className="form-group col-6">
                                         <label className="newCharacterEyes">Eye Color <i className="far fa-eye"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterEyes" name="eyecolor" aria-describedby="eyeCharacter" placeholder="Eye color of your character" value={this.state.eyecolor} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterEyes" name="eyecolor" aria-describedby="eyeCharacter" placeholder="Eye color of your character" value={this.state.eyecolor} onChange={this.handleChange} required />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-6">
                                         <label className="newCharacterBodyType">Body Type <i className="far fa-walking"></i></label>
-                                        <input type="text" className="form-control" id="newCharacterBodyType" name="bodytype" aria-describedby="bodyTypeCharacter" placeholder="Body type of your character" value={this.state.bodytype} onChange={this.handleChange} required/>
+                                        <input type="text" className="form-control" id="newCharacterBodyType" name="bodytype" aria-describedby="bodyTypeCharacter" placeholder="Body type of your character" value={this.state.bodytype} onChange={this.handleChange} required />
                                     </div>
                                     <div className="form-group col-6">
                                         <label className="newCharacterScarSelect">Scars <i className="far fa-knife-kitchen"></i></label>
@@ -346,8 +400,8 @@ class Create extends Component {
 
                     <div className="card species-info">
                         <div className="card-header">
-                        <i className="far fa-user"></i> Species Selection <i className="far fa-user"></i>
-        </div>
+                            <i className="far fa-user"></i> Species Selection <i className="far fa-user"></i>
+                        </div>
                         <div className="card-body background">
                             <div className={["species_stats"]}>
                                 <b>Brawn:</b> {this.state.speciesBrawn} <br />
@@ -447,7 +501,7 @@ class Create extends Component {
                 </div>
                 <div className="card career-card">
                     <div className="card-header">
-                    <i className="far fa-tools"></i> Career Selection <i className="far fa-tools"></i>
+                        <i className="far fa-tools"></i> Career Selection <i className="far fa-tools"></i>
                     </div>
                     <div className="card-body background">
                         <h3 className="careerHeader">{this.state.career} : {this.state.specialization}</h3>
@@ -517,8 +571,8 @@ class Create extends Component {
 
                 <div className="card personal-card">
                     <div className="card-header">
-                    <i className="far fa-clipboard-list-check"></i> Character Skills <i className="far fa-clipboard-list-check"></i>
-    </div>
+                        <i className="far fa-clipboard-list-check"></i> Character Skills <i className="far fa-clipboard-list-check"></i>
+                    </div>
                     <div className="card-body background">
                         <div className="container col">
                             <h4 className="careerHeader"><i className="far fa-scroll"></i> Player Attributes <i className="far fa-scroll"></i></h4> <br />

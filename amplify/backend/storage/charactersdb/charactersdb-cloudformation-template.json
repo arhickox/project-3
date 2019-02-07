@@ -9,13 +9,6 @@
             "Type": "String"
         },
         
-        "sortKeyName": {
-            "Type": "String"
-        },
-        "sortKeyType": {
-            "Type": "String"
-        },
-        
         "tableName": {
             "Type": "String"
         }
@@ -29,16 +22,6 @@
                   {
                       "AttributeName": "id",
                       "AttributeType": "S"
-                  }  , 
-                  
-                  {
-                      "AttributeName": "name",
-                      "AttributeType": "S"
-                  }  , 
-                  
-                  {
-                      "AttributeName": "gender",
-                      "AttributeType": "S"
                   } 
                   
                 ],
@@ -47,11 +30,6 @@
                   {
                     "AttributeName": "id",
                     "KeyType": "HASH"
-                  }  , 
-                  
-                  {
-                    "AttributeName": "name",
-                    "KeyType": "RANGE"
                   } 
                   
                 ],
@@ -62,34 +40,6 @@
                 "TableName": {
                    "Ref": "tableName"
                 },
-                
-                "GlobalSecondaryIndexes": [
-                  
-                    {
-                        "IndexName": "name",
-                        "KeySchema": [
-                            
-                            {
-                                "AttributeName": "name",
-                                "KeyType": "HASH"
-                            }  , 
-                            
-                            {
-                                "AttributeName": "gender",
-                                "KeyType": "RANGE"
-                            } 
-                            
-                        ],
-                        "Projection": {
-                            "ProjectionType": "ALL"
-                        },
-                        "ProvisionedThroughput": {
-                            "ReadCapacityUnits": "5",
-                            "WriteCapacityUnits": "5"
-                        }
-                    } 
-                  
-                ]
                 
             }
         }
@@ -116,17 +66,6 @@
         "PartitionKeyType": {
             "Value": {
                 "Ref": "partitionKeyType"
-            }
-        },
-        
-        "SortKeyName": {
-            "Value": {
-                "Ref": "sortKeyName"
-            }
-        },
-        "SortKeyType": {
-            "Value": {
-                "Ref": "sortKeyType"
             }
         },
         
