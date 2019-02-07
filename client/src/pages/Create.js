@@ -82,7 +82,7 @@ class Create extends Component {
         if (btnSpeciesType === "human") {
           this.setState({
             species: "Human",
-            image: "<img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/human.jpg' className='species_img' height='450' width='290' />",
+            image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/human.jpg' className='species_img' height='450' width='290' />,
             speciesBrawn: 2,
             speciesAgility: 2,
             speciesIntelligence: 2,
@@ -92,10 +92,10 @@ class Create extends Component {
             speciesWound: 10,
             speciesStrain: 10,
             experience: 110,
-            ability: '<text>"Humans start the game with <u>one rank in two different non-career skills of their choice</u>. They still may not train these skills above rank 2 at character creation."</text>'
+            ability: <text>"Humans start the game with <u>one rank in two different non-career skills of their choice</u>. They still may not train these skills above rank 2 at character creation."</text>
           });
         } else if (btnSpeciesType === "twilek") {
-          this.setState({ image: "<img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' className='species_img' height='450' width='290' />",
+          this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' className='species_img' height='450' width='290' />,
             species: "Twi'lek",
             speciesBrawn: 1,
             speciesAgility: 2,
@@ -106,7 +106,7 @@ class Create extends Component {
             speciesWound: 10,
             speciesStrain: 11,
             experience: 100,
-            ability: "<text>Twi'leks begin the game with one rank in either <u>Charm</u> or <u>Deception</u>. They still may not train Charm or Deception above rank 2 during character creation. When making skill checks, Twi'leks may remove [1 Setback Die] imposed due to arid or hot environmental conditions.</text>"
+            ability: <text>Twi'leks begin the game with one rank in either <u>Charm</u> or <u>Deception</u>. They still may not train Charm or Deception above rank 2 during character creation. When making skill checks, Twi'leks may remove [1 Setback Die] imposed due to arid or hot environmental conditions.</text>
           });
         } else if (btnSpeciesType === "wookiee") {
             this.setState({ species: "Wookiee" });
