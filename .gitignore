@@ -12,4 +12,4 @@ node_modules
 /client
 .amplifyrc 
 amplify/.config
-
+/#current-cloud-backend
