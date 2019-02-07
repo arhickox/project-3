@@ -31,7 +31,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "project3-20190206125528-deployment",
-					"S3Key": "amplify-builds/charactersLambda-1549510971-latest-build.zip"
+					"S3Key": "amplify-builds/charactersLambda-1549560588-latest-build.zip"
 				}
 			}
 		},

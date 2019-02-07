@@ -158,10 +158,10 @@
 				}
 			}
 		},
-		"apicharacterApi": {
+		"apicharactersApi": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/api/characterApi-cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/project3-20190206125528-deployment/amplify-cfn-templates/api/charactersApi-cloudformation-template.json",
 				"Parameters": {
 					"functioncharactersLambdaName": {
 						"Fn::GetAtt": [

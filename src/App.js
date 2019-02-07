@@ -8,13 +8,13 @@ import Navbar from "./components/Navbar/index";
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react';
 import Amplify, { API } from "aws-amplify";
-import aws_exports from './aws-exports';
+import awsmobile from './aws-exports';
 
-Amplify.configure(aws_exports);
+Amplify.configure(awsmobile);
 
 
 let apiName = 'charactersApi';
-let path = '/view';
+let path = '/characters';
 
 
 class App extends Component {
