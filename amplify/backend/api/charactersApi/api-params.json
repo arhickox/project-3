@@ -1,0 +1,36 @@
+{
+    "paths": [
+        {
+            "name": "/characters",
+            "lambdaFunction": "charactersLambda",
+            "privacy": {
+                "protected": true,
+                "auth": "rw",
+                "unauth": "r"
+            }
+        }
+    ],
+    "resourceName": "charactersApi",
+    "apiName": "project3115738da",
+    "functionArns": [
+        {
+            "lambdaFunction": "charactersLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "project3-20190206125528-authRole",
+        "unAuthRoleName": "project3-20190206125528-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "charactersLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
