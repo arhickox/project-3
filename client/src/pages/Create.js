@@ -1,9 +1,6 @@
-import axios from "axios";
+import API from "../utils/API";
 import React, { Component } from "react";
 import SpeciesOverall from "../components/SpeciesOverall";
-
-
-
 
 class Create extends Component {
     state = {
@@ -83,31 +80,34 @@ class Create extends Component {
         const btnSpeciesType = event.target.attributes.getNamedItem("data-value").value;
 
         if (btnSpeciesType === "human") {
-            this.setState({ species: "Human" });
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/human.jpg' className='species_img' height='450' width='290' /> });
-            this.setState({ speciesBrawn: 2 });
-            this.setState({ speciesAgility: 2 });
-            this.setState({ speciesIntelligence: 2 });
-            this.setState({ speciesCunning: 2 });
-            this.setState({ speciesWillpower: 2 });
-            this.setState({ speciesPresence: 2 });
-            this.setState({ speciesWound: 10 });
-            this.setState({ speciesStrain: 10 });
-            this.setState({ experience: 110 });
-            this.setState({ ability: <text>"Humans start the game with <u>one rank in two different non-career skills of their choice</u>. They still may not train these skills above rank 2 at character creation."</text> });
+          this.setState({
+            species: "Human",
+            image: "<img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/human.jpg' className='species_img' height='450' width='290' />",
+            speciesBrawn: 2,
+            speciesAgility: 2,
+            speciesIntelligence: 2,
+            speciesCunning: 2,
+            speciesWillpower: 2,
+            speciesPresence: 2,
+            speciesWound: 10,
+            speciesStrain: 10,
+            experience: 110,
+            ability: '<text>"Humans start the game with <u>one rank in two different non-career skills of their choice</u>. They still may not train these skills above rank 2 at character creation."</text>'
+          });
         } else if (btnSpeciesType === "twilek") {
-            this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' className='species_img' height='450' width='290' /> });
-            this.setState({ species: "Twi'lek" });
-            this.setState({ speciesBrawn: 1 });
-            this.setState({ speciesAgility: 2 });
-            this.setState({ speciesIntelligence: 2 });
-            this.setState({ speciesCunning: 2 });
-            this.setState({ speciesWillpower: 2 });
-            this.setState({ speciesPresence: 3 });
-            this.setState({ speciesWound: 10 });
-            this.setState({ speciesStrain: 11 });
-            this.setState({ experience: 100 });
-            this.setState({ ability: <text>Twi'leks begin the game with one rank in either <u>Charm</u> or <u>Deception</u>. They still may not train Charm or Deception above rank 2 during character creation. When making skill checks, Twi'leks may remove [1 Setback Die] imposed due to arid or hot environmental conditions."</text> });
+          this.setState({ image: "<img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/twilek.png' className='species_img' height='450' width='290' />",
+            species: "Twi'lek",
+            speciesBrawn: 1,
+            speciesAgility: 2,
+            speciesIntelligence: 2,
+            speciesCunning: 2,
+            speciesWillpower: 2,
+            speciesPresence: 3,
+            speciesWound: 10,
+            speciesStrain: 11,
+            experience: 100,
+            ability: "<text>Twi'leks begin the game with one rank in either <u>Charm</u> or <u>Deception</u>. They still may not train Charm or Deception above rank 2 during character creation. When making skill checks, Twi'leks may remove [1 Setback Die] imposed due to arid or hot environmental conditions.</text>"
+          });
         } else if (btnSpeciesType === "wookiee") {
             this.setState({ species: "Wookiee" });
             this.setState({ image: <img src='https://project-3-20190122205700-deployment.s3.amazonaws.com/wookiee.jpg' className='species_img' height='450' width='290' /> });
@@ -278,12 +278,13 @@ class Create extends Component {
             [name]: value
         });
     }
-    
+
     handleSubmit = event => {
         console.log(this.state);
         event.preventDefault();
-        axios.post("/api/characters", this.state)
-        
+        API.postCharacter(this.state).then(res => {
+          console.log(res);
+        });
     }
 
     render() {
