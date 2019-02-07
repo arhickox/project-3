@@ -9,7 +9,7 @@ const { MongoClient, ObjectID } = require('mongodb');
 let client;
 
 // returns a Promise which resolves to the new or existing database connection
-const connect = (url = process.env.MONGODB_URI) => {
+const connect = (url) => {
   if (client) {
     return Promise.resolve(client);
   }
@@ -22,7 +22,13 @@ const connect = (url = process.env.MONGODB_URI) => {
     });
 };
 
-const dbConnect = () => connect().then(client => client.db());
+const dbConnect = () => {
+  if (process.env.MONGODB_URI) {
+    return connect(process.env.MONGODB_URI).then(client => client.db());
+  } else {
+    return connect("mongodb://localhost:27017/project3").then(client => client.db());
+  }
+}
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -42,6 +48,7 @@ module.exports = app;
 
 app.get('/api/characters', async (req, res, next) => {
   try {
+    console.log(req.body)
     const db = await dbConnect();
     const characters = await db.collection('characters')
       .find({})
@@ -117,6 +124,6 @@ app.delete('/api/characters/:characterId', async (req, res, next) => {
 
 });
 
-app.get('/*', (req, res) => {
+express.Router().use((req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
