@@ -17,11 +17,19 @@ class View extends React.Component {
   }
 
   render() {
-    const characters = this.state.characters.map((character, key) => <div key={key} value={character.id}>{character.fullname}</div>);
+    const characters = this.state.characters.map((character, key) => <div key={key} value={character.id}>NAME:{character.fullname}{' '}SPECIES:{character.species}{' '}SPECIALIZATION:{character.specialization}</div>);
     return (
     <div>
-      <h1>View Characters</h1>
-      {characters}
+      <div class="card">
+  <div class="card-header">
+  View Characters
+  </div>
+  <div class="card-body">
+  {characters}
+  </div>
+</div>
+      
+      
     </div>
     )
   }
