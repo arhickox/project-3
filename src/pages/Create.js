@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import List from "../List";
-import Details from "../Details";
-import Amplify, { API } from "aws-amplify";
+import API from "../utils/API";
+import Amplify from "aws-amplify";
+//import Amplify, { API } from "aws-amplify";
+
 import aws_exports from "../aws-exports";
 import SpeciesOverall from "../components/SpeciesOverall";
 
@@ -274,9 +275,9 @@ class Create extends Component {
     };
 
 
-    async componentDidMount() {
+   /* async componentDidMount() {
         await this.fetchList();
-    }
+    }*/
 
     handleChange = event => {
         const id = event.target.id;
@@ -288,10 +289,10 @@ class Create extends Component {
         });
     }
 
-    handleSubmit = async event => {
+    handleSubmit = event => {
         console.log(this.state);
         event.preventDefault();
-        await API.post("charactersAPI", "/view", {
+        /*await API.post("charactersAPI", "/view", {
             body: {
                 name: this.state.name,
                 gender: this.state.gender,
@@ -303,7 +304,7 @@ class Create extends Component {
                 scars: this.state.scars,
                 notable_features: this.state.notes
             }
-        });
+        });*/
         this.setState({
             name: "",
             gender: "",
@@ -318,10 +319,10 @@ class Create extends Component {
         this.fetchList();
     };
 
-    async fetchList() {
+    /*async fetchList() {
         const response = await API.get("characters", "/view");
         this.setState({ list: [...response] });
-    }
+    }*/
 
     loadDetailsPage = async id => {
         const response = await API.get("characters", "/view/" + id);
