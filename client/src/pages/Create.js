@@ -1,5 +1,9 @@
+import axios from "axios";
 import React, { Component } from "react";
 import SpeciesOverall from "../components/SpeciesOverall";
+
+
+
 
 class Create extends Component {
     state = {
@@ -274,10 +278,15 @@ class Create extends Component {
             [name]: value
         });
     }
-
+    insertNewCharacter(e) {
+        axios.post('/api/characters',
+        )
+    }
     handleSubmit = event => {
         console.log(this.state);
         event.preventDefault();
+        return axios.post("/api/characters", this.state)
+        
     }
 
     render() {
