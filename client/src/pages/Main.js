@@ -27,11 +27,9 @@ function Main() {
         <p class="card-text">Technology Used: </p>
         <ul>
             <li>React</li>
-            <li>AWS</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>MongoDB</li>
+            <li>Express</li>
+            <li>Deployed on Heroku</li>
         </ul>
       </div>
     </div>
