@@ -284,6 +284,7 @@ class Create extends Component {
         event.preventDefault();
         API.postCharacter(this.state).then(res => {
           console.log(res);
+          alert("Character Submited! Head to View Characters to check it out.")
         });
     }
 
