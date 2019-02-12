@@ -14,7 +14,7 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "charactersdb";
+let tableName = "characterTable";
 
 const userIdPresent = false; // TODO: update in case is required to use that definition
 const partitionKeyName = "id";
