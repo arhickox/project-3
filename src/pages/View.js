@@ -45,10 +45,7 @@ class View extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>View Characters</h1>
-        {this.state.showDetails ?
-        (<Details item = {this.state.item} loadListPage = {this.state.loadListPage} delete = {this.delete} />) : (<List list={this.state.list} loadDetailsPage={this.loadDetailsPage} />)
-        }
+        
       </div>
     );
   }
