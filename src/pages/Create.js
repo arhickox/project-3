@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import Amplify from "aws-amplify";
-//import Amplify, { API } from "aws-amplify";
-
+import Amplify, { API } from "aws-amplify";
 import aws_exports from "../aws-exports";
 import SpeciesOverall from "../components/SpeciesOverall";
 
@@ -275,26 +272,26 @@ class Create extends Component {
     };
 
 
-   /* async componentDidMount() {
+    async componentDidMount() {
         await this.fetchList();
-    }*/
+    }
 
     handleChange = event => {
-        const id = event.target.id;
         const target = event.target;
+        const id = target.name;
         const value = target.value;
         const name = target.name;
         this.setState({
-            [name]: value
+            [id]: value
         });
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         console.log(this.state);
         event.preventDefault();
-        /*await API.post("charactersAPI", "/view", {
+        await API.post("charactersApi", "/characters", {
             body: {
-                name: this.state.name,
+                id: this.state.name,
                 gender: this.state.gender,
                 height: this.state.height,
                 weight: this.state.weight,
@@ -304,7 +301,7 @@ class Create extends Component {
                 scars: this.state.scars,
                 notable_features: this.state.notes
             }
-        });*/
+        });
         this.setState({
             name: "",
             gender: "",
@@ -319,13 +316,13 @@ class Create extends Component {
         this.fetchList();
     };
 
-    /*async fetchList() {
-        const response = await API.get("characters", "/view");
+    async fetchList() {
+        const response = await API.get("charactersApi", "/characters");
         this.setState({ list: [...response] });
-    }*/
+    }
 
     loadDetailsPage = async id => {
-        const response = await API.get("characters", "/view/" + id);
+        const response = await API.get("charactersApi", "/characters/" + id);
         this.setState({ item: { ...response }, showDetails: true });
     };
     loadListPage = () => {
@@ -394,6 +391,23 @@ class Create extends Component {
                                     <textarea className="form-control" name="notes" value={this.state.notes} onChange={this.handleChange} id="newCharacterFeatures" rows="3"></textarea>
                                 </div>
                             </form>
+
+                            <div className="col-6">
+                                <pre>
+                                    <code>
+                                        <p>Character Name: {this.state.fullname}</p>
+                                        <p>Gender: {this.state.gender}</p>
+                                        <p>Height: {this.state.height}</p>
+                                        <p>Weight: {this.state.weight}</p>
+                                        <p>Hair Color: {this.state.haircolor}</p>
+                                        <p>Eye Color: {this.state.eyecolor}</p>
+                                        <p>Body Type: {this.state.bodytype}</p>
+                                        <p>Scars: {this.state.scars}</p>
+                                        <p>Notes: {this.state.notes}</p>
+                                    </code>
+                                </pre>
+                            </div>
+
                         </div>
                     </div>
                 </div>
